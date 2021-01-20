@@ -3,3 +3,10 @@ main: de.n04h.mc.industrial.IndustrialRevolution
 version: 1.0.0
 author: NoahBlaaa15
 api-version: 1.16
+commands:
+  sit:
+    description: Sit on the Ground
+    usage: /<command>
+  head:
+    description: Sit on the Ground
+    usage: /<command>

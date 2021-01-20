@@ -17,6 +17,9 @@ public class IndustrialRevolution extends JavaPlugin{
         industrialRecipes ir = new industrialRecipes(this);
 
         getServer().getPluginManager().registerEvents(new machineEvents(this), this);
+
+        this.getCommand("sit").setExecutor(new machineEvents(this));
+        this.getCommand("head").setExecutor(new machineEvents(this));
     }
 
     @Override

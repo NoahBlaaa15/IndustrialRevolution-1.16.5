@@ -15,7 +15,7 @@ public class industrialRecipe {
     
     private char[] alpha = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
 
-    public industrialRecipe(Plugin plugin, Material material, int amount, String name, String[] lore, Enchantment enchantment, boolean unbreak, String key, String l1, String l2, String l3, Material...  recipe) {
+    public industrialRecipe(Plugin plugin, Material material, int amount, String name, String[] lore, Enchantment[] enchantment, boolean unbreak, String key, String l1, String l2, String l3, Material...  recipe) {
 
         ItemStack i = new ItemStack(material);
         i.setAmount(amount);
@@ -27,7 +27,10 @@ public class industrialRecipe {
             im.setLore(Arrays.asList(lore));
         }
         if(enchantment != null){
-            im.addEnchant(enchantment, 1, true);
+            for (Enchantment entch: enchantment
+                 ) {
+                im.addEnchant(entch, entch.getMaxLevel(), true);
+            }
         }
         im.setUnbreakable(unbreak);
         i.setItemMeta(im);
@@ -47,7 +50,7 @@ public class industrialRecipe {
         Bukkit.addRecipe(shaped);
     }
 
-    public industrialRecipe(Plugin plugin, Material material, int amount, String name, String[] lore, Enchantment enchantment, boolean unbreak, String key, String l1, String l2, String l3, Material recipe) {
+    public industrialRecipe(Plugin plugin, Material material, int amount, String name, String[] lore, Enchantment[] enchantment, boolean unbreak, String key, String l1, String l2, String l3, Material recipe) {
         ItemStack i = new ItemStack(material);
         i.setAmount(amount);
         ItemMeta im = i.getItemMeta();
@@ -58,7 +61,10 @@ public class industrialRecipe {
             im.setLore(Arrays.asList(lore));
         }
         if(enchantment != null){
-            im.addEnchant(enchantment, 1, true);
+            for (Enchantment entch: enchantment
+            ) {
+                im.addEnchant(entch, entch.getMaxLevel(), true);
+            }
         }
         im.setUnbreakable(unbreak);
         i.setItemMeta(im);
