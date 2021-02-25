@@ -157,7 +157,7 @@ public class industrialRecipes {
                         "§8he comes",
                         "§8Cooldown: 60 seconds",
                         "",
-                        "§cItem Ability: Overload §e§lRIGHT CLICK + SHIFT",
+                        "§cItem Ability: Overload §e§lLEFT CLICK + SHIFT",
                         "§7Pushes every Entity away from you",
                         "",
                         "§cSet Ability: God's Fortune §e§lAUTOMATIC",

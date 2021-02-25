@@ -107,7 +107,7 @@ public class machineEvents implements Listener, CommandExecutor {
 
         }else if(e.getAction() == Action.LEFT_CLICK_BLOCK || e.getAction() == Action.LEFT_CLICK_AIR){
             try {
-                if(e.getPlayer().isSneaking() && e.getPlayer().getInventory().getChestplate() != null && e.getPlayer().getInventory().getChestplate().getItemMeta().getDisplayName().equalsIgnoreCase("§cNetherite Energy Condenser") && !(lockedChestplate.contains(e.getPlayer()))){
+                if(e.getPlayer().isSneaking() && e.getPlayer().getInventory().getItemInMainHand().getType() == Material.AIR && e.getPlayer().getInventory().getChestplate() != null && e.getPlayer().getInventory().getChestplate().getItemMeta().getDisplayName().equalsIgnoreCase("§cNetherite Energy Condenser") && !(lockedChestplate.contains(e.getPlayer()))){
                     List<Entity> ent = e.getPlayer().getNearbyEntities(10, 10, 10);
                     for (int i = 0; i < ent.size(); i++) {
                         Entity en = ent.get(i);
@@ -151,6 +151,8 @@ public class machineEvents implements Listener, CommandExecutor {
         }
 
     }
+
+
 
     @EventHandler
     public void onSpawn(EntitySpawnEvent e){
@@ -297,6 +299,7 @@ public class machineEvents implements Listener, CommandExecutor {
                 p.setFlying(true);
             }
         }catch(NullPointerException ex){ }
+
     }
     @EventHandler
     public void onChange(PlayerArmorChangeEvent e){
